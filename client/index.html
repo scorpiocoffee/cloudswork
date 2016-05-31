@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <base href="/">
+    <title>Clouds</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+
+    <link rel="stylesheet" href="pages/app.css">
+    <link rel="stylesheet" href="pages/main/main.css">
+    <link rel="stylesheet" href="pages/footer/footer.css">
+    <link rel="stylesheet" href="pages/guides/guides.css">
+
+  </head>
+  <body ng-app="cloudsApp">
+
+    <guides></guides>
+    <div ng-view=""></div>
+    <footer></footer>
+
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-socket-io/socket.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-socket-io/socket.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="pages/app.js"></script>
+    <script src="pages/footer/footer.directive.js"></script>
+    <script src="pages/guides/guides.directive.js"></script>
+    <script src="pages/main/main.controller.js"></script>
+    
+  </body>
+</html>

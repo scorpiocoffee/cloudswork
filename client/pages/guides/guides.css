@@ -1,0 +1,117 @@
+#guides {
+  display: inline-block;
+  position: fixed;
+  margin-top: 5%;
+  margin-left: 90%;
+}
+
+#mainB {
+  display: inline-block;
+  background-color: white;
+  margin: 20%; 
+  text-align: center;
+  font-size: 25px;
+  color: dimgrey; 
+  padding : 10%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px;
+  border: 1px solid lightgrey;
+}
+
+#mainB:hover {
+  text-decoration: none;
+  box-shadow: 0 12px 16px 0 lightgrey, 0 12px 40px 0 lightgrey;
+}
+
+#mainp {
+  display: inline-block;
+  background-color: white;
+  margin-top: 15%;
+  margin-bottom: 20%;
+  margin-right: 15%;
+  font-family: Comic Sans MS;
+  text-align: center;
+  font-size: 15px;
+  color: dimgrey; 
+  padding-top: 2%;
+  padding-bottom: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px;
+  border: 1px solid lightgrey;
+  text-decoration: none;
+}
+
+#mainp:hover {
+  text-decoration: none;
+  box-shadow: 0 12px 16px 0 lightgrey, 0 12px 40px 0 lightgrey;
+}
+
+#menu {
+  display: inline-block;
+  background-color:white;
+  border-radius: 5px; 
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#m1 {
+  display: block;  
+  color: dimgrey;
+  padding: 2px;
+  text-align: center;
+  font-family: Comic Sans MS;
+  border-bottom: 1px solid lightgrey;
+}
+
+#m2 {
+  display: block; 
+  color: dimgrey;
+  padding: 2px;
+  text-align: center;
+  font-family: Comic Sans MS;
+  border-bottom: 1px solid lightgrey;
+}
+
+#m3 {
+  display: block;
+  color: dimgrey;
+  padding: 2px;
+  text-align: center;
+  font-family: Comic Sans MS;
+  border-bottom: 1px solid lightgrey;
+}
+
+#m4 {
+  display: block;
+  color: dimgrey;
+  padding: 2px;
+  text-align: center;
+  font-family: Comic Sans MS;
+}
+
+#m1:hover {
+  text-decoration: none;
+  color: dimgrey;
+  background-color: lightgrey;
+}
+
+#m2:hover {
+  text-decoration: none;
+  color: dimgrey;
+  background-color: lightgrey;
+}
+
+#m3:hover {
+  text-decoration: none;
+  color: dimgrey;
+  background-color: lightgrey;
+}
+
+#m4:hover {
+  text-decoration: none;
+  color: dimgrey;
+  background-color: lightgrey;
+}
+

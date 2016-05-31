@@ -1,0 +1,32 @@
+<div id="guides" style="z-index: 3;" class="collapse navbar-collapse">
+  <div class="btn-group" role="group">
+    <li class="btn-group">
+      <a type="btn-round btn-fill" href="/main">
+        <i class="fa fa-home" id="mainB"></i>
+      </a>
+      <a type="btn-round btn-fill" ng-click="isCollapsed=!isCollapsed" href="#">
+        <i class="fa fa-navicon" id="mainB"></i>
+      </a>
+      <div ng-show="isCollapsed" id="menu">
+        <a type="botton" href="/main#description" id="m1" ng-click="isCollapsed=!isCollapsed">
+          About
+        </a>
+        <a type="botton" href="/main#sheffield" id="m2" ng-click="isCollapsed=!isCollapsed">
+          University of Sheffield
+        </a>
+        <a type="botton" href="/main#hallam" id="m3" ng-click="isCollapsed=!isCollapsed">
+          Sheffield Hallam University
+        </a>
+        <a type="botton" href="/main#navigation" id="m4" ng-click="isCollapsed=!isCollapsed">
+          Back to Top
+        </a>
+      </div>
+      <a href="/help" type="btn-round btn-fill" id="mainp">
+          Warm Help
+      </a>
+      <a href="/chat" type="btn-round btn-fill" id="mainp">
+          Happy Talk
+      </a>
+    </li>
+  </div>
+</div>
