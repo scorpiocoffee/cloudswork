@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall":"bower install",
+    "postinstall": "bower install",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.15.1",
+    "bower": "^1.7.9",
     "cookie-parser": "^1.4.2",
     "errorhandler": "^1.4.3",
     "express": "^4.13.4",
