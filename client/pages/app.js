@@ -6,13 +6,22 @@ angular.module('cloudsApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.tinymce'
 ])
   .config(function($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'pages/main/main.html',
         controller : 'MainController'
+      })
+      .when('/help', {
+        templateUrl: 'pages/help/help.html',
+        controller : 'HelpController'
+      })
+      .when('/chat', {
+        templateUrl: 'pages/chat/chat.html',
+        controller : 'ChatController'
       })
       .otherwise({
         redirectTo: '/'

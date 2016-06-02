@@ -1,0 +1,66 @@
+<guides></guides>
+<div id="help">
+	<div class="row">
+		<h2>Warm in Sheffield</h2>
+		<hr>
+	    <div class="col-md-4" style="margin-left:1%;">
+		    <table class="table">
+		       	<tr>
+		    		<th id="titleTopic">Topic</th>
+		    		<th id="titleTime"><em>Time</em></th>
+		       	</tr>
+		        <tr ng-repeat="i in questions | orderBy: '-post_date'">
+		           	<td id="topic">{{i.topic}}</td>
+		           	<td id="time"><em>{{i.post_date}}</em></td>
+		        </tr>
+		   	</table>
+		</div>
+		<div class="col-md-7" style="border:1px solid gray;">
+			<div class="panel">
+				<div ng-repeat="detail in questions" id="panel">
+					<div class="panel-heading">
+						<b>{{detail.topic}}</b>
+						<span class="badge" style="float: right;"><em>{{detail.poster}}</em></span>
+					</div>
+					<div class="panel-body">
+						{{detail.details}}
+					</div>
+				</div>
+			</div>
+			<button ng-click="isCollapsed = !isCollapsed" id="postB">Post Question ?
+			</button>
+			<br>
+			<hr>
+			<form ng-show="isCollapsed" ng-submit="postBtnClick(postForm)">
+				<div class="form-group" for="form" novalidate>
+					<label for="postForm.poster" class="sr-only"></label>
+					<div class="col-xs-3">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<i class="fa fa-user"></i>
+							</div>
+							<input type="poster" placeholder="Your Name" ng-model="postForm.poster" required class="form-control" />
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<i class="fa fa-calendar"></i>
+							</div>
+							<input type="text" placeholder="time now" ng-model="postForm.post_date" required class="form-control">
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<input type="text" placeholder="please give a short title of your question?" class="form-control" ng-model="postForm.topic" />
+					</div>	
+					<button class="submit" type="submit" id="post">POST</button>			
+					<br><br>				
+					<div style="margin-left: 15px;">
+					<textarea type="text" ui-tinymce="tinymceOptions" ng-model="postForm.details"></textarea>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<footer></footer>

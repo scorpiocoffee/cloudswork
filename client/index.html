@@ -17,14 +17,13 @@
     <link rel="stylesheet" href="pages/main/main.css">
     <link rel="stylesheet" href="pages/footer/footer.css">
     <link rel="stylesheet" href="pages/guides/guides.css">
+    <link rel="stylesheet" href="pages/help/help.css">
+    <link rel="stylesheet" href="pages/chat/chat.css">
 
   </head>
   <body ng-app="cloudsApp">
 
-    <guides></guides>
     <div ng-view="">Hello</div>
-    <footer></footer>
-
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -35,12 +34,16 @@
     <script src="bower_components/angular-socket-io/socket.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-socket-io/socket.js"></script>
+    <script src="bower_components/tinymce-dist/tinymce.js"></script>
+    <script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
     <script src="/socket.io/socket.io.js"></script>
 
     <script src="pages/app.js"></script>
     <script src="pages/footer/footer.directive.js"></script>
     <script src="pages/guides/guides.directive.js"></script>
     <script src="pages/main/main.controller.js"></script>
+    <script src="pages/help/help.controller.js"></script>
+    <script src="pages/chat/chat.controller.js"></script>
     
   </body>
 </html>

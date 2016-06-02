@@ -1,0 +1,59 @@
+<guides ng-show="guides_status"></guides>
+<div class="chat-room" style="font-family: Comic Sans MS;">
+    <div class="row">
+        <div class="col-md-3" id="guests-bar">
+        	<div class="heading">
+        		<h3 class="title">Online: 
+        		<span class="guest-number"><em>{{guests.length}}</em></span>
+        		</h3>
+        	</div>
+        	<hr>
+        	<div class="body">
+        		<div class="public-room" style="margin-bottom: 20px;font-size: 18px;">
+        			<span class="avatar">
+        			<span class="fa-stack fa-lg">
+        				<i class="fa fa-circle-thin fa-stack-2x"></i>
+        				<i class="fa fa-group fa-stack-1x"></i>
+        			</span>
+        			</span>
+        			<span>Group Room</span>
+        		</div>
+        		<div class="user-part" ng-repeat="user in guests" style="margin-bottom: 5px;">
+        			<span class="avatar">
+        			<span class="fa-stack fa-lg">
+        				<i class="fa fa-circle-thin fa-stack-2x"></i>
+        				<i class="fa fa-user fa-stack-1x"></i>
+        			</span>
+        			</span>
+        			<span>{{user.name}}</span>
+        		</div>
+        	</div>
+        </div>
+        <div class="col-md-9" id="message-bar" style="border: 1px solid ghostwhite;">
+            <div class="chat-heading">
+                <h3 class="title">Group Room</h3>
+            </div>
+            <hr>
+            <div class="chat-body">
+            	<div class="message-part" ng-repeat="i in messages" scrolltothis="scrollToBottom()">
+            		<span class="avatar" style="color:lightblue;">
+            		<span class="fa-stack fa-lg">
+        				<i class="fa fa-circle-thin fa-stack-2x"></i>
+        				<i class="fa fa-user fa-stack-1x"></i>
+        			</span>
+        			</span>
+        			<span>{{i.speaker}}</span>&nbsp;:&nbsp;&nbsp;
+        			<span>{{i.contents}}</span>
+        			<span class="badge" style="float:right;color:black;background-color: transparent;">{{i.time}}</span>
+        		</div>
+        		<button ng-click="guides_status=!guides_status" class="btn btn-fill" style="float: right;" ng-show="!guides_status">GO</button>
+            </div>
+            <div class="chat-footer">
+                <form class="send-form form-inline" novalidate ng-submit="sendBtn(sendForm)">
+                    <input name="contents" type="text" class="form-control" ng-model="sendForm.contents" required style="width: 90%;height:40px;">
+                    <button type="submit" class="btn btn-success" ng-disabled="sendForm.$invalid">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

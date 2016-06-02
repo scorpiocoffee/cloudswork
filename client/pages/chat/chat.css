@@ -1,0 +1,50 @@
+.chat-body {
+	height: 660px;
+	margin-bottom: 0%;
+	margin-top: 0px;
+}
+
+#guests-bar .body {
+	height: 660px;
+}
+.col-md-3 {
+	height: 100%;
+	background-color: lightgray;
+}
+
+h3 {
+	text-align: center;
+	font-size: 20px;
+	letter-spacing: 1px;
+}
+
+.col-md-9 {
+	height: 100%;
+}
+
+.chat-footer {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+}
+
+button {
+  font-size: 12px;
+  text-align: center;
+  font-family: Comic Sans MS;
+  font-weight: bold;
+  color: dimgrey; 
+  border: 1px solid gray;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  background-color: transparent;
+}
+
+button:hover {
+	text-decoration: none;
+  	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0), 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
