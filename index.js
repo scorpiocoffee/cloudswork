@@ -3,6 +3,9 @@
 var http = require('http');
 var express = require('express');
 var bodyParser = require('body-parser');
+var morgan = require('morgan');
+var methodOverride = require('method-override');
+var errorhandler = require('errorhandler');
 var path = require('path');
 var app = express();
 var server = require('http').createServer(app);
@@ -12,10 +15,15 @@ var socket = io.listen(server);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.set('appPath', path.join(__dirname, 'client'));
-app.use(express.static(path.join(path.normalize(__dirname + '/'), 'client')));
+// app.set('appPath', path.join(__dirname, 'client'));
+// app.use(express.static(path.join(path.normalize(__dirname + '/'), 'client')));
+app.get('/*', function(req, res) {
+	res.sendFile(__dirname + '/client/index.html');
+});
 
-server.listen(3000, function() {
+var PORT = process.env.PORT || 3000;
+
+server.listen(PORT, function() {
    console.log('Express server listening on %d, in %s mode', 3000);
 });
 
