@@ -15,8 +15,8 @@ var socket = io.listen(server);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// app.set('appPath', path.join(__dirname, 'client'));
-// app.use(express.static(path.join(path.normalize(__dirname + '/'), 'client')));
+app.set('appPath', path.join(__dirname, 'client'));
+app.use(express.static(path.join(path.normalize(__dirname + '/'), 'client')));
 app.get('/*', function(req, res) {
 	res.sendFile(__dirname + '/client/index.html');
 });
