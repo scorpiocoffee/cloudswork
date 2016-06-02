@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heroku/cloudswork/issues"
+  },
   "dependencies": {
     "body-parser": "^1.15.1",
     "cookie-parser": "^1.4.2",

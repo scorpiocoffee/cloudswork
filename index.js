@@ -19,3 +19,4 @@ server.listen(3000, function() {
    console.log('Express server listening on %d, in %s mode', 3000);
 });
 
+exports = module.exports = app;
