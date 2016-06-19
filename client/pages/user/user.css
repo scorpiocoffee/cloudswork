@@ -1,0 +1,28 @@
+.user {
+    text-align: left;
+    border-bottom: solid 1px #ccc;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.user:hover{
+    background-color: transparent;
+}
+
+.user .avatar{
+    vertical-align: middle;
+}
+
+.user .nickname{
+    margin-left: 20px;
+    vertical-align: middle;
+    font-family: Comic Sans MS;
+    color: rgba(0,0,0,.7);
+}
+
+.user .unread{
+    vertical-align: middle;
+    margin-right: 5px;
+    color: red;
+}

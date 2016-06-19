@@ -16,13 +16,13 @@
   border-radius: 6px;
 }
 
-.panel-heading {
+#panel .panel-heading {
   background-color: #ADD8E6; 
   padding: 5px;
   padding-left: 10%;
 }
 
-.panel-body {
+#panel .panel-body {
   width:100%;
   height: all;
 }

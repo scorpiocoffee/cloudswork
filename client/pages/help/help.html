@@ -27,11 +27,11 @@
 					</div>
 				</div>
 			</div>
-			<button ng-click="isCollapsed = !isCollapsed" id="postB">Post Question ?
+			<button ng-click="isPosted = !isPosted" id="postB">Post Question ?
 			</button>
 			<br>
 			<hr>
-			<form ng-show="isCollapsed" ng-submit="postBtnClick(postForm)">
+			<form ng-show="isPosted" ng-submit="postBtnClick(postForm)">
 				<div class="form-group" for="form" novalidate>
 					<label for="postForm.poster" class="sr-only"></label>
 					<div class="col-xs-3">

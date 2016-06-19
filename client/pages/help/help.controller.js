@@ -2,7 +2,7 @@
 
 angular.module('cloudsApp').controller('HelpController', function($scope, $location) {
   this.$location = $location
-	$scope.isCollapsed = false;
+	$scope.isPosted = false;
 
 	$scope.tinymceOptions = {
 		height: 230,

@@ -1,59 +1,66 @@
 <guides ng-show="guides_status"></guides>
-<div class="chat-room" style="font-family: Comic Sans MS;">
-    <div class="row">
-        <div class="col-md-3" id="guests-bar">
-        	<div class="heading">
-        		<h3 class="title">Online: 
-        		<span class="guest-number"><em>{{guests.length}}</em></span>
-        		</h3>
-        	</div>
-        	<hr>
-        	<div class="body">
-        		<div class="public-room" style="margin-bottom: 20px;font-size: 18px;">
-        			<span class="avatar">
-        			<span class="fa-stack fa-lg">
-        				<i class="fa fa-circle-thin fa-stack-2x"></i>
-        				<i class="fa fa-group fa-stack-1x"></i>
-        			</span>
-        			</span>
-        			<span>Group Room</span>
-        		</div>
-        		<div class="user-part" ng-repeat="user in guests" style="margin-bottom: 5px;">
-        			<span class="avatar">
-        			<span class="fa-stack fa-lg">
-        				<i class="fa fa-circle-thin fa-stack-2x"></i>
-        				<i class="fa fa-user fa-stack-1x"></i>
-        			</span>
-        			</span>
-        			<span>{{user.name}}</span>
-        		</div>
-        	</div>
+
+<!--    chat room    -->
+<div class="chat-room-wrapper" ng-show="hasLogined">
+    <div class="col-xs-4" id="online">
+        <div class="heading">
+            ME: <br>
+            <user info="user"></user>
         </div>
-        <div class="col-md-9" id="message-bar" style="border: 1px solid ghostwhite;">
-            <div class="chat-heading">
-                <h3 class="title">Group Room</h3>
+        <div class="body">
+            <div class="user-wrapper">
+                <user iscurrentreceiver="receiver===user.nickname" info="user" ng-click="setReceiver(user.nickname)" ng-repeat="user in users">
+                </user>
             </div>
-            <hr>
-            <div class="chat-body">
-            	<div class="message-part" ng-repeat="i in messages" scrolltothis="scrollToBottom()">
-            		<span class="avatar" style="color:lightblue;">
-            		<span class="fa-stack fa-lg">
-        				<i class="fa fa-circle-thin fa-stack-2x"></i>
-        				<i class="fa fa-user fa-stack-1x"></i>
-        			</span>
-        			</span>
-        			<span>{{i.speaker}}</span>&nbsp;:&nbsp;&nbsp;
-        			<span>{{i.contents}}</span>
-        			<span class="badge" style="float:right;color:black;background-color: transparent;">{{i.time}}</span>
-        		</div>
-        		<button ng-click="guides_status=!guides_status" class="btn btn-fill" style="float: right;" ng-show="!guides_status">GO</button>
+        </div>
+        <div class="foot">
+            <p>
+                <i class="fa fa-users"></i> : 
+                <span class="user-number"><em>{{users.length-1}}</em>
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <div class="col-xs-8" id="rooms">
+        <div class="heading">
+            <h3>
+            {{receiver?receiver:"Group Room"}}
+            </h3>
+        </div>
+        <div class="body">
+            <div class="message-wrapper">
+                <message self="nickname" scrolltothis="scrollToBottom()" info="message" ng-repeat="message in messages">
+                </message>
             </div>
-            <div class="chat-footer">
-                <form class="send-form form-inline" novalidate ng-submit="sendBtn(sendForm)">
-                    <input name="contents" type="text" class="form-control" ng-model="sendForm.contents" required style="width: 90%;height:40px;">
-                    <button type="submit" class="btn btn-success" ng-disabled="sendForm.$invalid">Send</button>
-                </form>
-            </div>
+        </div>
+        <div class="foot">
+            <form novalidate name="postform" ng-submit="postMessage()">
+                <div class="input-group"> 
+                    <input type="text" ng-model="words" required />
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-success" ng-disabled="postform.$invalid">Send</button>
+                    </span>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
+<!--    login    -->
+<div class="loginform-wrapper" ng-show="!hasLogined">
+    <form class="form-inline login" novalidate name="loginform" ng-submit="login()">
+        <div class="form-group">
+            <label for="nickname" class="sr-only"></label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <span class="fa fa-user"></span>
+                </div>
+                <input type="text" class="form-control" id="nickname" placeholder="Your Nickname" ng-model="nickname" required/>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" ng-disabled="loginform.$invalid">LOG IN</button>
+        <p ng-show="userExisted" class="help-block" style="color: black; font-size: 20px;">A user with this nickname already exists.</p>
+    </form>
+</div>
+
